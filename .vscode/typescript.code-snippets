@@ -1,0 +1,39 @@
+{
+  "trc": {
+    "prefix": "trc",
+    "description": "React Component (Typescript)",
+    "body": [
+      "import React from 'react'",
+      "",
+      "export type ${TM_FILENAME_BASE}Props = {",
+      "};",
+      "",
+      "const $TM_FILENAME_BASE: React.FC<${TM_FILENAME_BASE}Props> = (props) => {",
+      "\treturn (",
+      "\t\t<>$0</>",
+      "\t)",
+      "}",
+      "",
+      "export default $TM_FILENAME_BASE",
+      ""
+    ]
+  },
+  "exportDefault": {
+    "prefix": "exportDefault",
+    "description": "Export default",
+    "body": [
+      "export { default } from './${TM_DIRECTORY/(.*)\\\///}'",
+      "export type { ${TM_DIRECTORY/(.*)\\\///}Props } from './${TM_DIRECTORY/(.*)\\\///}'",
+      ""
+    ]
+  },
+  "exportAs": {
+    "prefix": "exportAs",
+    "description": "Export Default As",
+    "body": [
+      "export { default as $0 } from './$0'",
+      "export type { $0Props } from './$0'",
+      ""
+    ]
+  },
+}

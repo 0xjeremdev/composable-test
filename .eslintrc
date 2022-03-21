@@ -1,0 +1,79 @@
+{
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false
+  },
+  "extends": [
+    "eslint:recommended",
+    "standard",
+    "standard-react",
+    "plugin:@next/next/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:prettier/recommended",
+    "plugin:promise/recommended",
+    "plugin:jsdoc/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "plugins": ["react", "react-hooks", "import", "promise", "jsdoc", "jsx-a11y", "prettier"],
+  "root": true,
+  "settings": {
+    "react": {
+      "version": "17"
+    },
+    "jsdoc": {
+      "mode": "typescript"
+    },
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": ["node_modules", "/"]
+      }
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "rules": {
+    "promise/no-nesting": "off",
+    "prettier/prettier": ["error",{ "endOfLine": "auto" }],
+    "jsdoc/require-param-type": "off",
+    "jsdoc/require-returns-type": "off",
+    "react/prop-types": "warn",
+    "react/forbid-prop-types": "warn",
+    "no-console": ["error", { "allow": ["error", "warn", "info", "debug"] }]
+  },
+  "overrides": [
+    {
+      "files": ["./**/*/*.ts", "./**/*/*.tsx"],
+      "parser": "@typescript-eslint/parser",
+      "extends": ["plugin:@typescript-eslint/recommended"],
+      "plugins": ["@typescript-eslint"],
+      "rules": {
+        "react/prop-types": "off",
+        "no-use-before-define": "off",
+        "no-unused-vars": "off",
+        "no-empty-function": "off",
+        "@typescript-eslint/no-use-before-define": "warn",
+        "@typescript-eslint/no-unused-vars": ["warn", { "args": "none", "ignoreRestSiblings": true }],
+        "@typescript-eslint/no-empty-function": ["error", { "allow": ["arrowFunctions"] }],
+        "@typescript-eslint/no-explicit-any": "warn"
+      }
+    },
+    {
+      "files": ["./next.config.js"],
+      "rules": {
+        "no-console": "off",
+        "func-names": "off",
+        "prefer-destructuring": "off",
+        "import/order": "off",
+        "consistent-return": "off",
+        "no-param-reassign": "off",
+        "import/no-extraneous-dependencies": "off",
+        "global-require": "off",
+        "import/no-dynamic-require": "off"
+      }
+    }
+  ]
+}
